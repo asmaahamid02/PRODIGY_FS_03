@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import '../styles/globals.css'
+import ReduxProvider from '@/store/ReduxProvider'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -44,7 +45,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ReduxProvider>
+            App Layout
+            {children}
+          </ReduxProvider>
         </ThemeProvider>
       </body>
     </html>
