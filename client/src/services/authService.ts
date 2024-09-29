@@ -1,5 +1,5 @@
 import { axiosInstance } from './interceptor'
-import { TLoginResponse } from '@/types/authTypes'
+import { TLoginResponse } from '@/features/auth/types'
 
 export const loginService = async (credentials: {
   email: string

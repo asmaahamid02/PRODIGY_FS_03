@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { TLoginRequest } from '@/types/authTypes'
+
 import { handleError } from '@/lib/error'
 import { loginService } from '@/services/authService'
+import { TLoginRequest } from '@/features/auth/types'
 export default function useLogin() {
   const [loading, setLoading] = useState(false)
   const login = async ({ email, password }: TLoginRequest) => {

@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import Link from 'next/link'
 import { FormEvent } from 'react'
 import useLogin from '@/features/auth/hooks/useLogin'
-import { TLoginRequest } from '@/types/authTypes'
+import { TLoginRequest } from '@/features/auth/types'
 
 export default function Login() {
   const { login, loading } = useLogin()

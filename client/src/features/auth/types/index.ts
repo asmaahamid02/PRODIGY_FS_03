@@ -7,8 +7,21 @@ export interface IAuthState {
 }
 
 export interface IUser {
-  _id: string
-  fullName: string
+  id: string
+  name: string
   email: string
-  avatar: string
+  createdAt: string
+}
+
+export type TLoginRequest = {
+  email: string
+  password: string
+}
+
+export type TLoginResponse = {
+  id: string
+  name: string
+  email: string
+  token: string
+  createdAt: string
 }
