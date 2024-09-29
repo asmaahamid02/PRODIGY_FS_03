@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import '../styles/globals.css'
 import ReduxProvider from '@/store/ReduxProvider'
+import { Toaster } from '@/components/ui/toaster'
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -11,7 +12,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Electom',
+  title: 'HomeBite',
   description: 'E-Commerce website for electronic gadgets',
   icons: [
     {
@@ -38,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${poppins.variable} antialiased`}>
+      <body className={`${poppins.variable} antialiased min-h-screen w-screen`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
@@ -46,8 +47,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ReduxProvider>
-            App Layout
-            {children}
+            <div className='flex flex-col overflow-hidden h-screen w-screen'>
+              {children}
+            </div>
+
+            <Toaster />
           </ReduxProvider>
         </ThemeProvider>
       </body>
